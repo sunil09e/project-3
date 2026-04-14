@@ -1,0 +1,11 @@
+.log
+*.log
+.git
+.gitignore
+.env
+*.env
+README.md
+Jenkinsfile
+deploy.sh
+build.sh
+docker-compose.yaml
