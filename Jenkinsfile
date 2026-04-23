@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         IMAGE_TAG = "v${BUILD_NUMBER}"
-        EC2_IP = "254"
+        EC2_IP = "fgrgergregerg254"
     }
     
     stages {
