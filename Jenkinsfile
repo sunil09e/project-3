@@ -29,6 +29,7 @@ pipeline {
 
       stage('Build') {
          steps {
+           chmod +x build.sh
            sh "./build.sh ${IMAGE_NAME} ${IMAGE_TAG}"
          }
       }
