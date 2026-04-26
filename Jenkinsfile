@@ -61,6 +61,7 @@ pipeline {
             cd app &&
             git checkout ${BRANCH_NAME} &&
             git pull origin ${BRANCH_NAME} &&
+            chmod +x deploy.sh &&
             ./deploy.sh ${IMAGE_NAME} ${IMAGE_TAG}
             '	
             """
