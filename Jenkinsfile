@@ -49,8 +49,8 @@ pipeline {
         }
      
       stage('Deploy') {
-    steps {
-        sshagent(['keyfile']) {
+        steps {
+          sshagent(['keyfile']) {
             sh """
             ssh -o StrictHostKeyChecking=no ubuntu@${EC2_IP} '
             if [ ! -d app ]; then
@@ -63,6 +63,8 @@ pipeline {
             ./deploy.sh ${IMAGE_NAME} ${IMAGE_TAG}
             '	
             """
+          }
         }
-    }
+      }
 }
+
