@@ -59,7 +59,7 @@ pipeline {
               passwordVariable: 'PASS'
              )]) {
               sh """
-              ssh -o StrictHostKeyChecking=no ec2-user@${EC2_IP} '
+              ssh -o StrictHostKeyChecking=no ec2-user@${EC2_IP} "
               echo \$PASS | docker login -u \$USER --password-stdin
 
               if [ ! -d app ]; then
@@ -71,12 +71,12 @@ pipeline {
               git pull origin prod &&
               chmod +x deploy.sh &&
               ./deploy.sh ${IMAGE_NAME} ${IMAGE_TAG}
-              '
+              "
               """
             }
           } else {
             sh """
-            ssh -o StrictHostKeyChecking=no ec2-user@${EC2_IP} "
+            ssh -o StrictHostKeyChecking=no ec2-user@${EC2_IP} '
             if [ ! -d app ]; then
              git clone https://github.com/sunil09e/project-3.git app
             fi
@@ -86,7 +86,7 @@ pipeline {
             git pull origin dev &&
             chmod +x deploy.sh &&
             ./deploy.sh ${IMAGE_NAME} ${IMAGE_TAG}
-            "
+            '
             """
           }
        }
