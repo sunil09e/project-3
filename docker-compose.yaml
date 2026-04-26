@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  web:
+    image: ${IMAGE_NAME}:${IMAGE_TAG}
+    container_name: devops-container
+    ports:
+      - "80:80"
+    restart: always
