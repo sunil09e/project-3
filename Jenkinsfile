@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         IMAGE_TAG = "v${BUILD_NUMBER}"
+
         EC2_IP = "15.207.248.21"
     }
     
