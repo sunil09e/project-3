@@ -52,7 +52,7 @@ pipeline {
        steps {
          sshagent(['keyfile']) {
            script {
-            if (env.BRANCH_NAME == 'prod') {
+            if (env.BRANCH_NAME == 'master') {
               withCredentials([usernamePassword(
               credentialsId: 'dockerhub-creds',
               usernameVariable: 'USER',
