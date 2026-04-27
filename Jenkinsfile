@@ -67,8 +67,8 @@ pipeline {
               fi
 
               cd app &&
-              git checkout prod &&
-              git pull origin prod &&
+              git checkout ${BRANCH_NAME} || exit 1
+              git pull origin ${BRANCH_NAME} || exit 1
               chmod +x deploy.sh &&
               ./deploy.sh ${IMAGE_NAME} ${IMAGE_TAG}
               "
@@ -76,17 +76,17 @@ pipeline {
             }
           } else {
             sh """
-            ssh -o StrictHostKeyChecking=no ec2-user@${EC2_IP} '
+            ssh -o StrictHostKeyChecking=no ec2-user@${EC2_IP} "
             if [ ! -d app ]; then
              git clone https://github.com/sunil09e/project-3.git app
             fi
 
             cd app &&
-            git checkout dev &&
-            git pull origin dev &&
+            git checkout ${BRANCH_NAME} || exit 1
+            git pull origin ${BRANCH_NAME} || exit 1
             chmod +x deploy.sh &&
             ./deploy.sh ${IMAGE_NAME} ${IMAGE_TAG}
-            '
+            "
             """
           }
        }
