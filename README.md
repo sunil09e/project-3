@@ -1,4 +1,5 @@
 # 🚀 Application Deployment using CI/CD (Jenkins + Docker + AWS + Monitoring)
+
 # 📌 Project Overview
 
 
@@ -10,9 +11,9 @@ This project demonstrates an end-to-end DevOps pipeline to deploy a React applic
 - AWS EC2 (Cloud Deployment)
 - Docker Hub (Image Repository)
 - Prometheus & Grafana (Monitoring)
-  # 🏗️ Architecture
+# 🏗️ Architecture
   GitHub → Jenkins → Docker Build → Docker Hub → AWS EC2 Deployment → Monitoring
-  # ⚙️ Prerequisites
+# ⚙️ Prerequisites
 
 Make sure you have:
 ## Application Server
