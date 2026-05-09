@@ -65,4 +65,28 @@ dockerhub-username/dev
 ```bash
 dockerhub-username/prod
 ```
+---
 
+# 🤖 Jenkins CI/CD Pipeline
+
+## Jenkins Workflow
+
+### Dev Branch Pipeline
+
+When code is pushed to `dev` branch:
+
+✅ Jenkins pulls source code  
+✅ Builds Docker image  
+✅ Pushes image to Docker Hub dev repository  
+✅ Deploys application to AWS server
+
+### Master Branch Pipeline
+
+When `dev` is merged to `master`:
+
+✅ Jenkins triggers production build  
+✅ Creates production Docker image  
+✅ Pushes image to Docker Hub prod repository  
+✅ Deploys production application
+
+---
