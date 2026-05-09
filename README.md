@@ -35,7 +35,6 @@ Make sure you have:
 
 Clone the repository:
 
-```bash
 git clone https://github.com/sriram-R-krishnan/devops-build.git
 cd devops-build
 # 🐳 Docker Setup
