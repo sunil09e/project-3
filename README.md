@@ -30,4 +30,14 @@ Make sure you have:
   ## Common Requirements
 - GitHub Repository
 - Docker Hub Account
-Security Group Configuration
+- Security Group Configuration
+## ⚙️ Setup Instructions
+
+Clone the repository:
+
+```bash
+git clone https://github.com/sriram-R-krishnan/devops-build.git
+cd devops-build
+# 🐳 Docker Setup
+Create a Dockerfile in the project directory
+
