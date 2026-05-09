@@ -16,7 +16,7 @@ This project demonstrates an end-to-end DevOps pipeline to deploy a React applic
 # ⚙️ Prerequisites
 
 Make sure you have:
-## Application Server
+**Application Server**
 - AWS EC2 Instance (Amazon Linux)
 - Docker
 - Docker Compose
