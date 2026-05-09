@@ -63,8 +63,6 @@ dockerhub-username/dev
 
 ```bash
 dockerhub-username/prod
-```
----
 
 # 🤖 Jenkins CI/CD Pipeline
 
