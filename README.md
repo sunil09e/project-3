@@ -56,9 +56,8 @@ Two repositories created:
 
 ### Development Repository (Public)
 
-```bash
 dockerhub-username/dev
-```
+
 
 ### Production Repository (Private)
 
