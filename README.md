@@ -16,19 +16,20 @@ This project demonstrates an end-to-end DevOps pipeline to deploy a React applic
 # ⚙️ Prerequisites
 
 Make sure you have:
+
 **Application Server**
 - AWS EC2 Instance (Amazon Linux)
 - Docker
 - Docker Compose
 - git
-## Jenkins & Monitoring Server
+# Jenkins & Monitoring Server
 - AWS EC2 Instance (Ubuntu)
 - Jenkins
 - Docker
 - Prometheus
 - Grafana
 - Git
-  ## Common Requirements
+*Common Requirements*
 - GitHub Repository
 - Docker Hub Account
 - Security Group Configuration
