@@ -86,4 +86,3 @@ When `dev` is merged to `master`:
 ✅ Pushes image to Docker Hub prod repository  
 ✅ Deploys production application
 
----
