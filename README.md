@@ -356,19 +356,19 @@ Folder : alerts #Create a folder to organize alert rules
 Evaluation Interval : 30s
 Pending Period      : 30s
 Keep Firing For     : 0s
-```
 
 **No Data / Error Handling**
-```bash
 No Data State        : Alerting
 Execution Error      : Alerting
 Missing Series Eval  : Default (2)
 ```
 
 **Notification Configuration**
+```bash
 - Contact Point: Email
 - Notification Method: SMTP (Gmail)
 - Recipient: Configured email address
+```
 
 ### Alert Workflow
 ```text
