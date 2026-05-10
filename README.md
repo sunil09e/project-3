@@ -23,6 +23,7 @@ Make sure you have:
 
 - AWS EC2 Instance (Amazon Linux)
 - Docker
+- git
 - Docker Compose
 ```bash
 sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -39,7 +40,6 @@ Verify installation:
 ```bash
 docker-compose --version
 ```
-- git
  
 **Jenkins & Monitoring Server**
   
@@ -60,6 +60,7 @@ docker-compose --version
 Clone the repository:
 
 git clone https://github.com/sriram-R-krishnan/devops-build.git
+
 cd devops-build
 # 🐳 Docker Setup
 ## Dockerfile
