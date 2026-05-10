@@ -264,3 +264,44 @@ Connections → Data Sources → Add Data Source → Prometheus
 ```text
 Dashboards → New Dashboard → Add Visualization
 ```
+4. Create alert rule
+ **Alert Name**
+```bash
+project-3
+```
+
+**Query Configuration**
+```bash
+Data Source : Prometheus
+Metric      : up
+Condition   : WHEN QUERY IS ABOVE 1
+```
+
+**Folder & Labels**
+```bash
+Folder : alerts
+```
+
+**Evaluation Settings**
+```bash
+Evaluation Interval : 30s
+Pending Period      : 30s
+Keep Firing For     : 0s
+```
+
+**No Data / Error Handling**
+```bash
+No Data State        : Alerting
+Execution Error      : Alerting
+Missing Series Eval  : Default (2)
+```
+
+**Notification Configuration**
+- Contact Point: Email
+- Notification Method: SMTP (Gmail)
+- Recipient: Configured email address
+
+### Alert Workflow
+```text
+Application Server Down → Node Exporter Unreachable → Prometheus Detects Failure → Grafana Triggers Alert → Email Notification Sent
+```  
