@@ -174,16 +174,16 @@ Pipeline plugin → to create CI/CD
 
 SSH Agent plugin → To securely deploy the application to the remote EC2 server using SSH
 
-Configured Credentials
+**Configured Credentials**
 
 Added credentials in Jenkins:
 
 - **GitHub Credentials** → For repository integration and branch discovery in Multibranch Pipeline
 - **Docker Hub Credentials** → For authenticating and pushing Docker images
 - **SSH Private Key Credentials** → For secure deployment to the application server
-Connected GitHub (Webhook)
 
-Configured webhook in GitHub repo
+**Configured webhook in GitHub repo**
+Connected GitHub (Webhook)
 
 URL: http://JENKINS-IP:8080/github-webhook/
 
