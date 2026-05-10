@@ -24,6 +24,21 @@ Make sure you have:
 - AWS EC2 Instance (Amazon Linux)
 - Docker
 - Docker Compose
+  ```bash
+sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
+
+Give execute permission:
+
+```bash
+sudo chmod +x /usr/local/bin/docker-compose
+```
+
+Verify installation:
+
+```bash
+docker-compose --version
+```
 - git
  
 **Jenkins & Monitoring Server**
@@ -69,8 +84,49 @@ dockerhub-username/dev
 
 ### Production Repository (Private)
 
-```bash
+
 dockerhub-username/prod
+## Docker Permission Configuration
+
+Add users to Docker group to run Docker commands without sudo.
+## Docker Permission Configuration
+
+### Application Server (Amazon Linux - ec2-user)
+Grant Docker permission to the application server user to deploy and manage containers without sudo.
+
+```bash
+sudo usermod -aG docker ec2-user
+```
+
+Apply changes:
+
+```bash
+newgrp docker
+```
+
+---
+
+### Jenkins Server (Ubuntu - Jenkins Service User)
+Grant Docker permission to the Jenkins user so the CI/CD pipeline can build, push, and manage Docker images.
+
+```bash
+sudo usermod -aG docker jenkins
+```
+
+Restart Jenkins:
+
+```bash
+sudo systemctl restart jenkins
+```
+
+---
+
+### Jenkins Server (Ubuntu - ubuntu User) [Optional]
+If Docker commands are executed manually on the Jenkins server using the Ubuntu user:
+
+```bash
+sudo usermod -aG docker ubuntu
+```
 
 # 🤖 Jenkins CI/CD Pipeline
 
@@ -305,3 +361,21 @@ Missing Series Eval  : Default (2)
 ```text
 Application Server Down → Node Exporter Unreachable → Prometheus Detects Failure → Grafana Triggers Alert → Email Notification Sent
 ```  
+# 🌐 Access Application
+
+## Application URL
+Access the deployed React application using:
+
+```bash
+http://<application-server-public-ip>
+```
+
+Example:
+```bash
+http://3.110.xxx.xxx
+```
+
+The application is exposed on **HTTP Port 80** and is publicly accessible through the configured AWS Security Group.
+# ✅ Conclusion
+
+This project successfully implements an end-to-end DevOps CI/CD pipeline with automated build, deployment, monitoring, and alerting for a production-ready React application.
