@@ -174,7 +174,7 @@ Pipeline plugin → to create CI/CD
 
 SSH Agent plugin → To securely deploy the application to the remote EC2 server using SSH
 
-## Configured Credentials
+### Configured Credentials
 
 Added credentials in Jenkins:
 
