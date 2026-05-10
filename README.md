@@ -174,7 +174,7 @@ Pipeline plugin → to create CI/CD
 
 SSH Agent plugin → To securely deploy the application to the remote EC2 server using SSH
 
-**Configured Credentials**
+## Configured Credentials
 
 Added credentials in Jenkins:
 
@@ -193,17 +193,18 @@ So whenever code is pushed → Jenkins triggers automatically
 ### Create Multibranch Pipeline Job
 
 `Jenkins Dashboard → New Item → Multibranch Pipeline`
-```bash
-Repository Source: GitHub
-Repository URL: https://github.com/your-username/your-repo.git
-Credentials: Select configured GitHub credentials
-```
-- **Discover Branches (All Branches)** → Automatically scans and builds all repository branches
-- Property Strategy: All branches get the same properties
+
+**Repository Source:** GitHub
+**Repository URL:** https://github.com/your-username/your-repo.git
+**Credentials:** Select configured GitHub credentials
+
+**Discover Branches (All Branches)** → Automatically scans and builds all repository branches
+**Property Strategy:** All branches get the same properties
+
 **Build Configuration**
-- Mode: by Jenkinsfile
-- Script Path: Jenkinsfile
- Jenkinsfile Detection**
+**Mode:** by Jenkinsfile
+**Script Path:** Jenkinsfile
+ Jenkinsfile Detection
 Jenkins automatically detects the `Jenkinsfile` in each branch and executes the defined pipeline stages.
 
 ### Pipeline Workflow
