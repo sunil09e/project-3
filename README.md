@@ -183,6 +183,7 @@ Added credentials in Jenkins:
 - **SSH Private Key Credentials** → For secure deployment to the application server
 
 **Configured webhook in GitHub repo**
+
 Connected GitHub (Webhook)
 
 URL: http://JENKINS-IP:8080/github-webhook/
