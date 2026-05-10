@@ -63,16 +63,16 @@ git clone https://github.com/sriram-R-krishnan/devops-build.git
 
 cd devops-build
 # 🐳 Docker Setup
-## Dockerfile
+### Dockerfile
 Defines the instructions to build the Docker image for the React application.
 
-## docker-compose.yml
+### docker-compose.yml
 Defines and manages multi-container deployment configuration, including container image, ports, container name, and restart policies.
 
-## build.sh
+### build.sh
 Automates the Docker image build process, including image creation and tagging for Docker Hub deployment.
 
-## deploy.sh
+### deploy.sh
 Automates application deployment by pulling the latest Docker image and starting the containerized application on the server.
 # 🐙 Docker Hub Repositories
 
