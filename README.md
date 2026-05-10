@@ -162,7 +162,7 @@ http://EC2-PUBLIC-IP:8080
 
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
-Installed Required Plugins
+### Installed Required Plugins
 
 We added plugins needed for DevOps pipeline:
 
