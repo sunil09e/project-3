@@ -49,7 +49,7 @@ docker-compose --version
 - Prometheus
 - Grafana
 - Git
-- 
+   
 **Common Requirements**
   
 - GitHub Repository
