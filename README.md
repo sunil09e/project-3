@@ -158,4 +158,109 @@ Code Push → Jenkins Trigger → Build Docker Image → Push to Docker Hub Dev 
 ```bash
 Merge to Master → Jenkins Trigger → Build Production Image → Push to Docker Hub Prod Repo → Deploy to Production Server
 ```
+# 📊 Monitoring
 
+Application monitoring is implemented using **Prometheus** and **Grafana** to continuously track the health and performance of the deployed application.
+
+## Prometheus (Jenkins Server)
+
+Create configuration file:
+
+```bash
+vi prometheus.yml
+```
+
+Run Prometheus container:
+
+```bash
+docker run -d -p 9090:9090 --name prometheus \
+-v $(pwd)/prometheus.yml:/etc/prometheus/prometheus.yml \
+prom/prometheus
+```
+
+Access:
+```bash
+http://<jenkins-server-public-ip>:9090
+```
+
+---
+
+## Grafana (Jenkins Server)
+
+Run Grafana container with email alert configuration:
+
+```bash
+docker run -d -p 3000:3000 --name grafana \
+-e GF_SMTP_ENABLED=true \
+-e GF_SMTP_HOST=smtp.gmail.com:587 \
+-e GF_SMTP_USER=your-email@gmail.com \
+-e GF_SMTP_PASSWORD=your-app-password \
+-e GF_SMTP_FROM_ADDRESS=your-email@gmail.com \
+grafana/grafana
+```
+
+Access:
+```bash
+http://<jenkins-server-public-ip>:3000
+```
+
+Default login:
+```bash
+Username: admin
+Password: admin
+```
+
+---
+
+## Node Exporter (Application Server)
+
+Run Node Exporter container:
+
+```bash
+docker run -d -p 9100:9100 --name node-exporter prom/node-exporter
+```
+
+Access:
+```bash
+http://<app-server-public-ip>:9100/metrics
+```
+
+---
+
+## Prometheus Target Configuration
+
+Example `prometheus.yml`:
+
+```yaml
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'app-server'
+    static_configs:
+      - targets: ['<app-server-public-ip>:9100']
+```
+
+Restart Prometheus:
+
+```bash
+docker restart prometheus
+```
+### Configure Alert in Grafana UI
+
+1. Login to Grafana
+```bash
+http://<jenkins-server-public-ip>:3000
+```
+
+2. Add Prometheus data source
+
+```text
+Connections → Data Sources → Add Data Source → Prometheus
+```
+
+3. Create dashboard panel
+
+```text
+Dashboards → New Dashboard → Add Visualization
+```
