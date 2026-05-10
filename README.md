@@ -55,7 +55,7 @@ docker-compose --version
 - GitHub Repository
 - Docker Hub Account
 - Security Group Configuration
-## ⚙️ Setup Instructions
+# ⚙️ Setup Instructions
 
 Clone the repository:
 
