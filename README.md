@@ -87,7 +87,7 @@ dockerhub-username/dev
 
 
 dockerhub-username/prod
-## Docker Permission Configuration
+# Docker Permission Configuration
 
 Add users to Docker group to run Docker commands without sudo.
 
