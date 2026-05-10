@@ -333,6 +333,7 @@ Connections → Data Sources → Add Data Source → Prometheus
 Dashboards → New Dashboard → Add Visualization
 ```
 4. Create alert rule
+   
  **Alert Name**
 ```bash
 project-3
