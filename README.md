@@ -195,16 +195,23 @@ So whenever code is pushed → Jenkins triggers automatically
 `Jenkins Dashboard → New Item → Multibranch Pipeline`
 
 **Repository Source:** GitHub
+
 **Repository URL:** https://github.com/your-username/your-repo.git
+
 **Credentials:** Select configured GitHub credentials
 
 **Discover Branches (All Branches)** → Automatically scans and builds all repository branches
+
 **Property Strategy:** All branches get the same properties
 
 **Build Configuration**
+
 **Mode:** by Jenkinsfile
+
 **Script Path:** Jenkinsfile
+
  Jenkinsfile Detection
+ 
 Jenkins automatically detects the `Jenkinsfile` in each branch and executes the defined pipeline stages.
 
 ### Pipeline Workflow
