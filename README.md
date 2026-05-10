@@ -103,6 +103,11 @@ Apply changes:
 ```bash
 newgrp docker
 ```
+or
+
+```bash
+logout & login
+```
 
 ---
 
