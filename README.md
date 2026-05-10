@@ -348,7 +348,7 @@ Condition   : WHEN QUERY IS ABOVE 1
 
 **Folder & Labels**
 ```bash
-Folder : alerts
+Folder : alerts #Create a folder to organize alert rules
 ```
 
 **Evaluation Settings**
