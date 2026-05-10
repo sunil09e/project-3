@@ -90,7 +90,6 @@ dockerhub-username/prod
 ## Docker Permission Configuration
 
 Add users to Docker group to run Docker commands without sudo.
-## Docker Permission Configuration
 
 ### Application Server (Amazon Linux - ec2-user)
 Grant Docker permission to the application server user to deploy and manage containers without sudo.
