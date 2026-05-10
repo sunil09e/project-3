@@ -109,8 +109,6 @@ or
 logout & login
 ```
 
----
-
 ### Jenkins Server (Ubuntu - Jenkins Service User)
 Grant Docker permission to the Jenkins user so the CI/CD pipeline can build, push, and manage Docker images.
 
@@ -123,8 +121,6 @@ Restart Jenkins:
 ```bash
 sudo systemctl restart jenkins
 ```
-
----
 
 ### Jenkins Server (Ubuntu - ubuntu User) [Optional]
 If Docker commands are executed manually on the Jenkins server using the Ubuntu user:
