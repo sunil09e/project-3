@@ -135,7 +135,9 @@ Provisioned AWS infrastructure using EC2 t2.micro instance for application serve
 Deployed the application on AWS EC2 server.
 
 ### Configured Security Groups with the following inbound rules:
+
 Jenkins Server → Used for Jenkins CI/CD, Prometheus, and Grafana monitoring
+
 Application Server → Used for hosting the React application
 
 ## Jenkins Server
