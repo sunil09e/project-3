@@ -91,30 +91,6 @@ dockerhub-username/prod
 
 Add users to Docker group to run Docker commands without sudo.
 
-# AWS Infrastructure
-
-Provisioned AWS infrastructure using EC2 t2.micro instance for application server.
-
-Deployed the application on AWS EC2 server.
-
-### Configured Security Groups with the following inbound rules:
-Jenkins Server → Used for Jenkins CI/CD, Prometheus, and Grafana monitoring
-Application Server → Used for hosting the React application
-
-## Jenkins Server
-
-Port 8080 → Accessible from anywhere (Jenkins UI)
-Port 9090 → Accessible from anywhere (Prometheus UI)
-Port 3000 → Accessible from anywhere (Grafana UI)
-Port 22 → SSH access for server management
-
-## Application Server
-
-Port 80 → Accessible from anywhere (Application access)
-Port 9100 → Accessible from anywhere (Node Exporter metrics for Prometheus monitoring)
-Port 22 → SSH access restricted to my IP address and Jenkins server IP for deployment access.
-
-
 ### Application Server (Amazon Linux - ec2-user)
 Grant Docker permission to the application server user to deploy and manage containers without sudo.
 
@@ -152,6 +128,34 @@ If Docker commands are executed manually on the Jenkins server using the Ubuntu 
 ```bash
 sudo usermod -aG docker ubuntu
 ```
+# AWS Infrastructure
+
+Provisioned AWS infrastructure using EC2 t2.micro instance for application server.
+
+Deployed the application on AWS EC2 server.
+
+### Configured Security Groups with the following inbound rules:
+Jenkins Server → Used for Jenkins CI/CD, Prometheus, and Grafana monitoring
+Application Server → Used for hosting the React application
+
+## Jenkins Server
+
+Port 8080 → Accessible from anywhere (Jenkins UI)
+
+Port 9090 → Accessible from anywhere (Prometheus UI)
+
+Port 3000 → Accessible from anywhere (Grafana UI)
+
+Port 22 → SSH access for server management
+
+## Application Server
+
+Port 80 → Accessible from anywhere (Application access)
+
+Port 9100 → Accessible from anywhere (Node Exporter metrics for Prometheus monitoring)
+
+Port 22 → SSH access restricted to my IP address and Jenkins server IP for deployment access.
+
 
 # 🤖 Jenkins CI/CD Pipeline
 
